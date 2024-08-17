@@ -21,6 +21,12 @@ def test_main_multiply():
     with mock.patch("builtins.input", side_effect=["1", "2", "multiply"]):
         result = main()
         assert result == 2
+    
+
+def test_main_invalid_action():
+    with mock.patch("builtins.input", side_effect=["1", "2", "invalid"]):
+        with pytest.raises(ValueError):
+            main()
 
 
 def test_main_divide():
@@ -29,7 +35,4 @@ def test_main_divide():
         assert result == 2
 
 
-def test_main_invalid_action():
-    with mock.patch("builtins.input", side_effect=["1", "2", "invalid"]):
-        with pytest.raises(ValueError):
-            main()
+
