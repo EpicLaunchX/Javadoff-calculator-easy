@@ -27,3 +27,9 @@ def test_main_divide():
     with patch("builtins.input", side_effect=["2", "1", "divide"]):
         result = main()
         assert result == 2
+
+
+def test_main_invalid_action():
+    with patch("builtins.input", side_effect=["1", "2", "invalid"]):
+        with pytest.raises(ValueError):
+            main()
