@@ -9,7 +9,6 @@ def test_operands():
     assert operands.second_operand == 2
 
 
-
 def test_operands_factory():
     operands = operands_factory(1, 2)
     assert operands.first_operand == 1
