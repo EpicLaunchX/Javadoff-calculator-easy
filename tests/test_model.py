@@ -1,6 +1,9 @@
+from unittest.mock import patch
+
 import pytest
 
 from src.pytemplate.domain.models import Operands, operands_factory
+from src.pytemplate.entrypoints.cli.main import main
 from src.pytemplate.service.calculator import Calculator
 
 
